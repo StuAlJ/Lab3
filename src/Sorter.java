@@ -11,7 +11,7 @@ public class Sorter {
             array[x] = random.nextInt(100);
         }
         System.out.println("Original Array: " + Arrays.toString(array));
-        selectionSort(array);
+        sort(array, random.nextInt(1));
         System.out.println("After sort: " + Arrays.toString(array));
     }
 
@@ -32,7 +32,7 @@ public class Sorter {
         }
     }
 
-    public void insertionSort(int arr[]) {
+    public static void insertionSort(int arr[]) {
         int n = arr.length;
         for (int i = 1; i < n; ++i) {
             int key = arr[i];
@@ -46,7 +46,13 @@ public class Sorter {
         }
     }
 
-    public void Sort(int arr[]) {
-        insertionSort(arr);
+    public static void sort(int arr[], int sortType) {
+        if(sortType==1){
+            insertionSort(arr);
+        }
+        else{
+            selectionSort(arr);
+        }
     }
 }
+
